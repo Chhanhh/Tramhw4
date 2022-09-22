@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tram's Excersise 1</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <h1><a href="../index.html">Link to Start Page</a></h1>
+    <h2>Tram's Excersise 1</h2>
+    <h3>View console to see JavaScript Output</h3>
+    <script src="../js/ex1.js"></script>
+</body>
+</html>
+
+<h1>Click the button to give input.</h1>
+
+<button onclick="myFunction()">Click Me</button>
+
+<p id="demo"></p>
+
+<script>
+
+// function to count and return number of vowels in a string
+function countVowel(str) {
+	//Initializing vowels array to check for vowels
+    const vowels = ["a", "e", "i", "o", "u"]
+    // initialize count
+    let count = 0;
+
+    // loop through string to test if each character is a vowel
+    for (let letter of str.toLowerCase()) {
+        if (vowels.includes(letter)) {
+            count++;
+        }
+    }
+
+    // return number of vowels
+    return count
+}
+
+//function to check if a string is palindrome
+function checkPalindrome(string) {
+
+    // find the length of a string
+    const len = string.length;
+
+    // loop through half of the string
+    for (let i = 0; i < len / 2; i++) {
+
+        // check if first and last characters of string are same
+        if (string[i] !== string[len - 1 - i]) {
+            return 'and is not a palindrome';
+        }
+    }
+    return 'and is a palindrome';
+}
+function myFunction() {
+  let input = prompt("Enter a word", "Madam");
+  if (input != null) {
+    document.getElementById("demo").innerHTML =
+    input+" contains " + countVowel(input)+" vowels "+ checkPalindrome(input.toLowerCase());
+  }
+}
+</script>
+
+</body>
+</html>
